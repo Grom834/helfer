@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helferportal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            background-color: #28a745;
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 10px 0;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        .form-section h2 {
+            margin-bottom: 10px;
+        }
+        .form-section label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-section input, .form-section select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-section input[type="radio"], .form-section input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        .submit-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Helferportal</h1>
+        <p>Helfer/-innen gesucht für den 3. Waldtriathlon Trainingen</p>
+    </div>
+    <div class="container">
+        <div class="form-container">
+            <form id="helperForm">
+                <div class="form-section">
+                    <h2>Liebe Freiwillige,</h2>
+                    <p>Hier könnt Ihr eintragen, wie Ihr uns am Samstag, 14. September 2024, beim Aufbau und am Sonntag, 15. September 2024, helfen wollt. Wir sammeln zunächst Eure Angaben. Anfang September verteilen wir dann die vorhandenen Aufgaben und sagen Euch Bescheid. Vergesst also Eure E-Mail-Adresse am Ende der Seite nicht. Herzlichen Dank!</p>
+                    <p>Damit Ihr als Helfende schnell erkennbar seid, haben wir auch in diesem Jahr wieder Helfer/-innen-T-Shirts für Euch. Bitte tragt Eure T-Shirt-Größe im Formular ein. Die T-Shirts werden am Samstag (Aufbautag) oder Sonntag im Orga-Zelt an Euch ausgegeben.</p>
+                </div>
+                <div class="form-section">
+                    <label for="vorname">Vorname*</label>
+                    <input type="text" id="vorname" name="vorname" required>
+                </div>
+                <div class="form-section">
+                    <label for="name">Name*</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-section">
+                    <label>Alter*</label>
+                    <label><input type="radio" name="alter" value="14–16" required> 14–16 Jahre</label>
+                    <label><input type="radio" name="alter" value="17–18"> 17–18 Jahre</label>
+                    <label><input type="radio" name="alter" value="18–30"> 18–30 Jahre</label>
+                    <label><input type="radio" name="alter" value="über 30"> über 30 Jahre</label>
+                </div>
+                <div class="form-section" id="eltern-details" style="display: none;">
+                    <label for="eltern-vorname">Vorname der oder des Erziehungsberechtigten</label>
+                    <input type="text" id="eltern-vorname" name="eltern-vorname">
+                    <label for="eltern-name">Name der oder des Erziehungsberechtigten</label>
+                    <input type="text" id="eltern-name" name="eltern-name">
+                </div>
+                <div class="form-section">
+                    <label for="strasse">Straße*</label>
+                    <input type="text" id="strasse" name="strasse" required>
+                </div>
+                <div class="form-section">
+                    <label for="hausnummer">Hausnummer*</label>
+                    <input type="text" id="hausnummer" name="hausnummer" required>
+                </div>
+                <div class="form-section">
+                    <label for="plz">Postleitzahl*</label>
+                    <input type="text" id="plz" name="plz" required>
+                </div>
+                <div class="form-section">
+                    <label for="ort">Ort*</label>
+                    <input type="text" id="ort" name="ort" required>
+                </div>
+                <div class="form-section">
+                    <label for="email">E-Mail-Adresse*</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-section">
+                    <label for="telefon">Telefonnummer</label>
+                    <input type="tel" id="telefon" name="telefon">
+                </div>
+                <div class="form-section">
+                    <h2>Einsatzfelder*</h2>
+                    <label><input type="checkbox" name="einsatzfelder" value="Aufbau"> Aufbau</label>
+                    <label><input type="checkbox" name="einsatzfelder" value="Startunterlagen"> Startunterlagen</label>
+                    <label><input type="checkbox" name="einsatzfelder" value="Schwimmstrecke"> Schwimmstrecke</label>
+                    <label><input type="checkbox" name="einsatzfelder" value="Radstrecke"> Radstrecke</label>
+                    <label><input type="checkbox" name="einsatzfelder" value="Laufstrecke"> Laufstrecke</label>
+                    <label><input type="checkbox" name="einsatzfelder" value="Verpflegung"> Verpflegung Teilnehmer/-innen</label>
+                    <label><input type="checkbox" name="einsatzfelder" value="Verkauf"> Verkauf Fan-Artikel</label>
+                    <label><input type="checkbox" name="einsatzfelder" value="Abbau"> Abbau</label>
+                    <label><input type="checkbox" name="einsatzfelder" value="Überall"> Einsatz überall möglich</label>
+                </div>
+                <div class="form-section">
+                    <h2>Bevorzugte Einsatzzeiten*</h2>
+                    <label for="zeit-samstag">Samstag</label>
+                    <select id="zeit-samstag" name="zeit-samstag">
+                        <option value="9.00–10.30 Uhr">9.00–10.30 Uhr</option>
+                        <option value="10.30–12.00 Uhr">10.30–12.00 Uhr</option>
+                        <option value="12.00–13.30 Uhr">12.00–13.30 Uhr</option>
+                        <option value="13.30–15.00 Uhr">13.30–15.00 Uhr</option>
+                        <option value="15.00–16.30 Uhr">15.00–16.30 Uhr</option>
+                        <option value="16.30–18.00 Uhr">16.30–18.00 Uhr</option>
+                        <option value="18.00–20.00 Uhr">18.00–20.00 Uhr</option>
+                    </select>
+                    <label for="zeit-sonntag">Sonntag</label>
+                    <select id="zeit-sonntag" name="zeit-sonntag">
+                        <option value="9.00–10.30 Uhr">9.00–10.30 Uhr</option>
+                        <option value="10.30–12.00 Uhr">10.30–12.00 Uhr</option>
+                        <option value="12.00–13.30 Uhr">12.00–13.30 Uhr</option>
+                        <option value="13.30–15.00 Uhr">13.30–15.00 Uhr</option>
+                        <option value="15.00–16.30 Uhr">15.00–16.30 Uhr</option>
+                        <option value="16.30–18.00 Uhr">16.30–18.00 Uhr</option>
+                        <option value="18.00–20.00 Uhr">18.00–20.00 Uhr</option>
+                       <div class="form-section">
+
+                    <h2>T-Shirt-Größe*</h2>
+                    <label><input type="radio" name="shirt-groesse" value="S" required> Größe S</label>
+                    <label><input type="radio" name="shirt-groesse" value="M"> Größe M</label>
+                    <label><input type="radio" name="shirt-groesse" value="L"> Größe L</label>
+                    <label><input type="radio" name="shirt-groesse" value="XL"> Größe XL</label>
+                </div>
+                <div class="form-section">
+                    <button type="submit" class="submit-button">Absenden</button>
+                </div>
+            </form>
+        </div>
+    </div>
+   
+    <div id="thank-you-message" style="display:none; text-align:center; padding:20px;">
+        <h2>Herzlichen Dank für Deine Unterstützung und Hilfe beim Waldtriathlon 2024. Darüber freuen wir uns sehr!</h2>
+        <p>Deine angegebene T-Shirt-Größe ist: <span id="shirt-size"></span></p>
+        <p>Dein Waldtriathlon-Orga-Team</p>
+    </div>
+
+    <script>
+        document.getElementById('helperForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var shirtSize = document.querySelector('input[name="shirt-groesse"]:checked').value;
+            document.getElementById('shirt-size').innerText = shirtSize;
+            document.querySelector('.container').style.display = 'none';
+            document.getElementById('thank-you-message').style.display = 'block';
+        });
+    </script>
+
+    <footer style="text-align: center; margin-top: 20px;">
+        <p>Informationen zu Deinen persönlichen Daten:</p>
+        <p>Die von Dir eingegebenen Daten werden ausschließlich zum Zweck der Kontaktaufnahme und Kommunikation im Rahmen des Waldtriathlon 2024 gespeichert und darüber hinaus nicht für weitere Zwecke genutzt oder an Dritte weitergegeben.</p>
+    </footer>
+</body>
+</html>
